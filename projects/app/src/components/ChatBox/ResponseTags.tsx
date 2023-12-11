@@ -3,6 +3,7 @@ import type { ChatHistoryItemResType } from '@fastgpt/global/core/chat/type.d';
 import type { ChatItemType } from '@fastgpt/global/core/chat/type';
 import { Flex, BoxProps, useDisclosure, Image, useTheme, Box } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import { useSystemStore } from '@/web/common/system/useSystemStore';
 import type { SearchDataResponseItemType } from '@fastgpt/global/core/dataset/type';
 import dynamic from 'next/dynamic';
@@ -17,6 +18,8 @@ import { getFileAndOpen } from '@/web/core/dataset/utils';
 const QuoteModal = dynamic(() => import('./QuoteModal'), { ssr: false });
 const ContextModal = dynamic(() => import('./ContextModal'), { ssr: false });
 const WholeResponseModal = dynamic(() => import('./WholeResponseModal'), { ssr: false });
+
+//const isShare = useMemo(() => router.pathname === '/chat/share', [router.pathname]);
 
 const ResponseTags = ({ responseData = [] }: { responseData?: ChatHistoryItemResType[] }) => {
   const theme = useTheme();
@@ -152,30 +155,33 @@ const ResponseTags = ({ responseData = [] }: { responseData?: ChatHistoryItemRes
           </Flex>
         </>
       )}
+
       <Flex alignItems={'center'} mt={2} flexWrap={'wrap'}>
         {quoteList.length > 0 && (
-          <MyTooltip label="查看引用">
+          <MyTooltip label={t('chat.View citations')}>
             <Tag
               colorSchema="blue"
               cursor={'pointer'}
               {...TagStyles}
               onClick={() => setQuoteModalData(quoteList)}
             >
-              {quoteList.length}条引用
+              {quoteList.length}
+              {t('chat.quotes')}
             </Tag>
           </MyTooltip>
         )}
         {chatAccount === 1 && (
           <>
             {historyPreview.length > 0 && (
-              <MyTooltip label={'点击查看完整对话记录'}>
+              <MyTooltip label={t('chat.response.view complete')}>
                 <Tag
                   colorSchema="green"
                   cursor={'pointer'}
                   {...TagStyles}
                   onClick={() => setContextModalData(historyPreview)}
                 >
-                  {historyPreview.length}条上下文
+                  {historyPreview.length}
+                  {t('chat.response.context')}
                 </Tag>
               </MyTooltip>
             )}
@@ -183,23 +189,23 @@ const ResponseTags = ({ responseData = [] }: { responseData?: ChatHistoryItemRes
         )}
         {chatAccount > 1 && (
           <Tag colorSchema="blue" {...TagStyles}>
-            多组 AI 对话
+            {t('multiple conversations')}
           </Tag>
         )}
-
         {isPc && runningTime > 0 && (
-          <MyTooltip label={'模块运行时间和'}>
+          <MyTooltip label={t('chat.response.running time')}>
             <Tag colorSchema="purple" cursor={'default'} {...TagStyles}>
               {runningTime}s
             </Tag>
           </MyTooltip>
         )}
-        <MyTooltip label={'点击查看完整响应'}>
-          <Tag colorSchema="gray" cursor={'pointer'} {...TagStyles} onClick={onOpenWholeModal}>
-            {t('chat.Complete Response')}
-          </Tag>
-        </MyTooltip>
-
+        {isPc && (
+          <MyTooltip label={t('chat.response.view full response')}>
+            <Tag colorSchema="gray" cursor={'pointer'} {...TagStyles} onClick={onOpenWholeModal}>
+              {t('chat.Complete Response')}
+            </Tag>
+          </MyTooltip>
+        )}
         {!!quoteModalData && (
           <QuoteModal rawSearch={quoteModalData} onClose={() => setQuoteModalData(undefined)} />
         )}

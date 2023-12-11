@@ -1097,7 +1097,7 @@ function ChatController({
 
   return (
     <Flex {...controlContainerStyle} ml={ml} mr={mr} display={display}>
-      <MyTooltip label={'复制'}>
+      <MyTooltip label={t('chat.copy')}>
         <MyIcon
           {...controlIconStyle}
           name={'copy'}
@@ -1117,7 +1117,7 @@ function ChatController({
               />
             </MyTooltip>
           )}
-          <MyTooltip label={'删除'}>
+          <MyTooltip label={t('chat.delete')}>
             <MyIcon
               {...controlIconStyle}
               name={'delete'}
@@ -1130,7 +1130,7 @@ function ChatController({
       {showVoiceIcon &&
         hasAudio &&
         (audioLoading ? (
-          <MyTooltip label={'加载中...'}>
+          <MyTooltip label={t('chat.loading') + '...'}>
             <MyIcon {...controlIconStyle} name={'common/loading'} />
           </MyTooltip>
         ) : audioPlaying ? (
@@ -1199,7 +1199,15 @@ function ChatController({
       )}
       {!!onFeedback && (
         <MyTooltip
-          label={chat.userFeedback ? `取消反馈。\n您当前反馈内容为:\n${chat.userFeedback}` : '反馈'}
+          label={
+            chat.userFeedback
+              ? t(`chat.Feedback Cancel`) +
+                `。\n` +
+                t(`chat.Feedback Content`) +
+                `:\n` +
+                `${chat.userFeedback}`
+              : t('chat.Feedback')
+          }
         >
           <MyIcon
             {...controlIconStyle}
