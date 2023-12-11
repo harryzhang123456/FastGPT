@@ -268,7 +268,7 @@ const ChatHistorySlider = ({
                           }}
                         >
                           <MyIcon mr={2} name={'delete'} w={'16px'}></MyIcon>
-                          删除
+                          t('chat.delete')
                         </MenuItem>
                       </MenuList>
                     </Menu>
