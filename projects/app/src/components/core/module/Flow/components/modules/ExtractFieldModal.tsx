@@ -16,6 +16,7 @@ const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 6);
 import MyModal from '@/components/MyModal';
 import Avatar from '@/components/Avatar';
 import MyTooltip from '@/components/MyTooltip';
+import { useTranslation } from 'next-i18next';
 
 const ExtractFieldModal = ({
   defaultField = {
@@ -33,7 +34,7 @@ const ExtractFieldModal = ({
   const { register, handleSubmit } = useForm<ContextExtractAgentItemType>({
     defaultValues: defaultField
   });
-
+  const { t } = useTranslation();
   return (
     <MyModal
       isOpen={true}
@@ -64,9 +65,9 @@ const ExtractFieldModal = ({
 
       <ModalFooter>
         <Button variant={'base'} mr={3} onClick={onClose}>
-          取消
+          {t('Cancel')}
         </Button>
-        <Button onClick={handleSubmit(onSubmit)}>确认</Button>
+        <Button onClick={handleSubmit(onSubmit)}>{t('Confirm')}</Button>
       </ModalFooter>
     </MyModal>
   );

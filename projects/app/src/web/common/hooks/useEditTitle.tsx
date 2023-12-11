@@ -2,6 +2,7 @@ import React, { useCallback, useRef } from 'react';
 import { ModalFooter, ModalBody, Input, useDisclosure, Button, Box } from '@chakra-ui/react';
 import MyModal from '@/components/MyModal';
 import { useToast } from './useToast';
+import { useTranslation } from 'next-i18next';
 
 export const useEditTitle = ({
   title,
@@ -17,7 +18,7 @@ export const useEditTitle = ({
   valueRule?: (val: string) => string | void;
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { t } = useTranslation();
   const inputRef = useRef<HTMLInputElement | null>(null);
   const onSuccessCb = useRef<(content: string) => void | Promise<void>>();
   const onErrorCb = useRef<(err: any) => void>();
@@ -97,9 +98,9 @@ export const useEditTitle = ({
         </ModalBody>
         <ModalFooter>
           <Button mr={3} variant={'base'} onClick={onClose}>
-            取消
+            {t('Cancel')}
           </Button>
-          <Button onClick={onclickConfirm}>确认</Button>
+          <Button onClick={onclickConfirm}> {t('Confirm')}</Button>
         </ModalFooter>
       </MyModal>
     ),

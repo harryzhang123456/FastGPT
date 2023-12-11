@@ -381,14 +381,14 @@ function EditLinkModal({
 
       <ModalFooter>
         <Button variant={'base'} mr={3} onClick={onClose}>
-          取消
+          {t('Cancel')}
         </Button>
 
         <Button
           isLoading={creating || updating}
           onClick={submitShareChat((data) => (isEdit ? onclickUpdate(data) : onclickCreate(data)))}
         >
-          确认
+          {t('Confirm')}
         </Button>
       </ModalFooter>
     </MyModal>
