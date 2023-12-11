@@ -13,7 +13,7 @@ const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
     () => [
       {
         icon: 'chat',
-        label: '新对话',
+        label: 'New Chat',
         onClick: () => {
           router.replace({
             query: {
@@ -25,15 +25,15 @@ const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
       },
       {
         icon: 'apiLight',
-        label: 'HTML导出',
+        label: 'HTML Export',
         onClick: () => onExportChat({ type: 'html', history })
       },
       {
         icon: 'markdown',
-        label: 'Markdown导出',
+        label: 'Markdown Export',
         onClick: () => onExportChat({ type: 'md', history })
       },
-      { icon: 'pdf', label: 'PDF导出', onClick: () => onExportChat({ type: 'pdf', history }) }
+      { icon: 'pdf', label: 'PDF Export', onClick: () => onExportChat({ type: 'pdf', history }) }
     ],
     [history, onExportChat, router]
   );
