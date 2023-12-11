@@ -4,11 +4,12 @@ import type { ChatItemType } from '@fastgpt/global/core/chat/type.d';
 import { Menu, MenuButton, MenuList, MenuItem, Box } from '@chakra-ui/react';
 import MyIcon from '@/components/Icon';
 import { useRouter } from 'next/router';
-import { t } from 'i18next';
+import { useTranslation } from 'next-i18next';
 
 const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
   const { onExportChat } = useChatBox();
   const router = useRouter();
+  const { t } = useTranslation();
 
   const menuList = useMemo(
     () => [

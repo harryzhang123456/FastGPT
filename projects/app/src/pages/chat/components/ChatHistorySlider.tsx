@@ -74,8 +74,8 @@ const ChatHistorySlider = ({
 
   // custom title edit
   const { onOpenModal, EditModal: EditTitleModal } = useEditTitle({
-    title: '自定义历史记录标题',
-    placeholder: '如果设置为空，会自动跟随聊天记录。'
+    title: t('chat.customTitle'),
+    placeholder: t('chat.customTitleNullTip')
   });
   const { openConfirm, ConfirmModal } = useConfirm({
     content: isShare
@@ -236,7 +236,7 @@ const ChatHistorySlider = ({
                             }}
                           >
                             <MyIcon mr={2} name={'setTop'} w={'16px'}></MyIcon>
-                            {item.top ? '取消置顶' : '置顶'}
+                            {item.top ? t('chat.unpin') : t('chat.pintotop')}
                           </MenuItem>
                         )}
                         {onSetCustomTitle && (

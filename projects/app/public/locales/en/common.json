@@ -139,7 +139,11 @@
     "copy": "Copy",
     "delete": "Delete",
     "retry": "Retry",
-    "loading": "Loading"
+    "loading": "Loading",
+    "pintotop":"Pin to top",
+    "unpin":"Unpin",
+    "customTitle":"Custom history title",
+    "customTitleNullTip":"If set to empty, the chat history will be automatically followed"
   },
   "common": {
     "Add": "Add",
