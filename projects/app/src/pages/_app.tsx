@@ -39,6 +39,7 @@ function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { hiId } = router.query as { hiId?: string };
   const { i18n } = useTranslation();
+  const { t } = useTranslation();
   const [scripts, setScripts] = useState<FeConfigsType['scripts']>([]);
   const [title, setTitle] = useState(process.env.SYSTEM_NAME || 'AI');
 
@@ -54,9 +55,9 @@ function App({ Component, pageProps }: AppProps) {
       // log fastgpt
       !isPlus &&
         console.log(
-          '%cWelcome to FastGPT',
+          t('App Start Console Log'),
           'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;',
-          `GitHub：https://github.com/labring/FastGPT`
+          t(`App Start Url`)
         );
       setScripts(scripts || []);
     })();
@@ -96,10 +97,7 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content={`${title} 是一个大模型应用编排系统，提供开箱即用的数据处理、模型调用等能力，可以快速的构建知识库并通过 Flow 可视化进行工作流编排，实现复杂的知识库场景！`}
-        />
+        <meta name="description" content={`${title} ` + t(`Head Content`)} />
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover"
