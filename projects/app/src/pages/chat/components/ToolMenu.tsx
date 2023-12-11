@@ -4,6 +4,7 @@ import type { ChatItemType } from '@fastgpt/global/core/chat/type.d';
 import { Menu, MenuButton, MenuList, MenuItem, Box } from '@chakra-ui/react';
 import MyIcon from '@/components/Icon';
 import { useRouter } from 'next/router';
+import { t } from 'i18next';
 
 const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
   const { onExportChat } = useChatBox();
@@ -13,7 +14,7 @@ const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
     () => [
       {
         icon: 'chat',
-        label: 'New Chat',
+        label: t('chat.New Chat'),
         onClick: () => {
           router.replace({
             query: {
@@ -25,15 +26,19 @@ const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
       },
       {
         icon: 'apiLight',
-        label: 'HTML Export',
+        label: t('chat.tool.HTML Export'),
         onClick: () => onExportChat({ type: 'html', history })
       },
       {
         icon: 'markdown',
-        label: 'Markdown Export',
+        label: t('chat.tool.Markdown Export'),
         onClick: () => onExportChat({ type: 'md', history })
       },
-      { icon: 'pdf', label: 'PDF Export', onClick: () => onExportChat({ type: 'pdf', history }) }
+      {
+        icon: 'pdf',
+        label: t('chat.tool.PDF Export'),
+        onClick: () => onExportChat({ type: 'pdf', history })
+      }
     ],
     [history, onExportChat, router]
   );

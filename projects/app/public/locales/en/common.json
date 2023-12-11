@@ -131,6 +131,11 @@
       "context": "context",
       "running time": "Model running time"
     },
+    "tool":{
+      "HTML Export":"HTML Export",
+      "Markdown Export":"Markdown Export",
+      "PDF Export":"PDF Export"
+    },
     "copy": "Copy",
     "delete": "Delete",
     "retry": "Retry",
