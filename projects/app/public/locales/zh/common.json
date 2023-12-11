@@ -1,5 +1,6 @@
 {
   "App": "应用",
+  "Head Content": "是一个大模型应用编排系统，提供开箱即用的数据处理、模型调用等能力，可以快速的构建知识库并通过 Flow 可视化进行工作流编排，实现复杂的知识库场景！",
   "Cancel": "取消",
   "Confirm": "确认",
   "Create New": "新建",
@@ -78,6 +79,8 @@
     "Mark Description": "当前标注功能为测试版。\n\n点击添加标注后，需要选择一个知识库，以便存储标注数据。你可以通过该功能快速的标注问题和预期回答，以便引导模型下次的回答。\n\n目前，标注功能同知识库其他数据一样，受模型的影响，不代表标注后 100% 符合预期。\n\n标注数据仅单向与知识库同步，如果知识库修改了该标注数据，日志展示的标注数据无法同步",
     "Mark Description Title": "标注功能介绍",
     "New Chat": "新对话",
+    "A new chat": "新的对话",
+    "Records": "条记录",
     "Question Guide Tips": "猜你想问",
     "Quote": "引用",
     "Read Mark Description": "查看标注功能介绍",
@@ -115,9 +118,17 @@
       "module temperature": "温度",
       "module time": "运行时长",
       "module tokens": "Tokens",
-      "plugin output": "插件输出值"
+      "multiple conversations": "多轮AI对话",
+      "plugin output": "插件输出",
+      "view complete": "点击查看完成对话记录",
+      "view full response": "点击查看完整回复",
+      "context": "上下文",
+      "running time": "模型运行时间"
     },
-    "retry": "重新生成"
+    "copy": "复制",
+    "delete": "删除",
+    "retry": "重试",
+    "loading": "加载中"
   },
   "common": {
     "Add": "添加",
