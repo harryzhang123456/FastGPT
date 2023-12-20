@@ -25,7 +25,6 @@
     "Chat Logs Tips": "Logs record the app's online, shared, and API(chatId is existing) conversations",
     "Chat logs": "Chat Logs",
     "Confirm Del App Tip": "Confirm to delete the app and all its chats",
-    "Confirm Save App Tip": "The application may be in advanced orchestration mode, and the advanced orchestration configuration will be overwritten after saving, please confirm!",
     "Connection is invalid": "Connecting is invalid",
     "Connection type is different": "Connection type is different",
     "Copy Module Config": "Copy config",
@@ -55,7 +54,7 @@
       "My Modules": "My Custom Modules",
       "No Modules": "No module",
       "System Module": "System Module",
-      "type": "{{type}}\n{{example}}"
+      "type": "{{type}}\n{{description}}"
     },
     "modules": {
       "Title is required": "Title is required"
@@ -90,7 +89,6 @@
     "quotes": "quotes",
     "View citations": "View citations",
     "Read Mark Description": "Read mark description",
-    "Read User Feedback": "Read user feedback",
     "Select Mark Kb": "Select Dataset",
     "Select Mark Kb Desc": "Select a dataset to store the expected answers",
     "You need to a chat app": "You need to a chat app",
@@ -227,6 +225,9 @@
     "confirm": {
       "Common Tip": "Operational Confirm"
     },
+    "course": {
+      "Read Course": "Read Course"
+    },
     "empty": {
       "Common Tip": "No data"
     },
@@ -260,6 +261,15 @@
     },
     "speech": {
       "error tip": "Speech Failed"
+    },
+    "system": {
+      "Help Chatbot": "Chatbot Helper",
+      "Use Helper": "UsingHelp"
+    },
+    "ui": {
+      "textarea": {
+        "Magnifying": "Magnifying"
+      }
     }
   },
   "core": {
@@ -283,6 +293,34 @@
       "TTS Tip": "After this function is enabled, the voice playback function can be used after each conversation. Use of this feature may incur additional charges.",
       "Welcome Text": "Welcome Text",
       "create app": "Create App",
+      "edit": {
+        "Confirm Save App Tip": "The application may be in advanced orchestration mode, and the advanced orchestration configuration will be overwritten after saving, please confirm!",
+        "Out Ad Edit": "You are about to exit the Advanced orchestration page, please confirm",
+        "Prompt Editor": "Prompt Editor",
+        "Save and out": "Save out",
+        "UnSave": "UnSave"
+      },
+      "feedback": {
+        "Custom feedback": "Custom feedback",
+        "close custom feedback": "Close Feedback"
+      },
+      "logs": {
+        "Source And Time": "Source & Time"
+      },
+      "outLink": {
+        "Can Drag": "Icon Drag",
+        "Default open": "Default Open",
+        "Iframe block title": "Copy the Iframe below and add it to your web page",
+        "Link block title": "Copy the link below to your browser to open",
+        "Script Close Icon": "Close Icon",
+        "Script Icon": "Icon",
+        "Script Open Icon": "Open Script",
+        "Script block title": "Add the following code to your website",
+        "Select Mode": "Select Mode",
+        "Select Using Way": "Select use mode",
+        "Show History": "Show History",
+        "Web Link": "Web Link"
+      },
       "setting": "App Setting",
       "simple": {
         "mode template select": "Template"
@@ -309,6 +347,16 @@
       "Speaking": "I'm listening...",
       "Stop Speak": "Stop Speak",
       "Type a message": "Input problem",
+      "error": {
+        "Messages empty": "Interface content is empty, maybe the text is too long ~"
+      },
+      "feedback": {
+        "Close User Good Feedback": "",
+        "Close User Like": "The user like\nClick to close the tag",
+        "Feedback Close": "Close Feedback",
+        "No Content": "The user did not fill in the specific feedback content",
+        "Read User dislike": "User dislike\nClick to view content"
+      },
       "markdown": {
         "Edit Question": "Edit Question",
         "Quick Question": "Ask the question immediately",
@@ -319,11 +367,36 @@
         "Read Quote": "Read Quote",
         "Read Source": "Read Source"
       },
+      "response": {
+        "context total length": "Context Length",
+        "module cq": "Question classification list",
+        "module cq result": "Classification Result",
+        "module extract description": "Extract Description",
+        "module extract result": "Extract Result",
+        "module historyPreview": "Messages",
+        "module http body": "Body",
+        "module http result": "Response",
+        "module http url": "Request Url",
+        "module limit": "Count Limit",
+        "module maxToken": "MaxTokens",
+        "module model": "Model",
+        "module name": "Name",
+        "module price": "Price",
+        "module query": "Question/Query",
+        "module question": "Question",
+        "module quoteList": "Quotes",
+        "module runningTime": "Time",
+        "module search query": "Query",
+        "module search response": "Search Result",
+        "module similarity": "Similarity",
+        "module temperature": "Temperature",
+        "module time": "Running Time",
+        "module tokens": "Tokens",
+        "plugin output": "Plugin Output",
+        "text output": "Text Output"
+      },
       "tts": {
         "Stop Speech": "Stop"
-      },
-      "error": {
-        "Messages empty": "Interface content is empty, maybe the text is too long ~"
       }
     },
     "dataset": {
@@ -405,13 +478,13 @@
         "id": "Data ID"
       },
       "error": {
+        "Start Sync Failed": "Start Sync Failed",
         "unAuthDataset": "No access to this knowledge base ",
         "unAuthDatasetCollection": "Not authorized to manipulate this data set ",
         "unAuthDatasetData": "Not authorized to manipulate this data ",
         "unAuthDatasetFile": "No permission to manipulate this file ",
         "unCreateCollection": "No permission to manipulate this data ",
-        "unLinkCollection": "not a network link collection ",
-        "Start Sync Failed": "Start Sync Failed"
+        "unLinkCollection": "not a network link collection "
       },
       "file": "File",
       "folder": "Folder",
@@ -488,6 +561,7 @@
         "Confirm Create Tips": "Confirm to synchronize the site, the synchronization task will start later, please confirm!",
         "Confirm Update Tips": "Are you sure to update the site configuration? The synchronization starts immediately with the new configuration. Please confirm",
         "Selector": "Selector",
+        "Selector Course": "Selector using tutorial",
         "Start Sync": "Start Sync",
         "UnValid Website Tip": "Your site may not be static and cannot be synchronized"
       }
@@ -502,14 +576,42 @@
       "Plugin output must connect": "Custom outputs must all be connected",
       "Variable": "Variable",
       "Variable Setting": "Variable Setting",
+      "edit": {
+        "Field Already Exist": "Key already exist",
+        "Field Edit": "Field Edit"
+      },
+      "extract": {
+        "Enum Description": "Lists the possible values for the field, one per row",
+        "Enum Value": "Enum",
+        "Field Description Placeholder": "Name/age /sql statement......",
+        "Field Setting Title": "Extract field configuration"
+      },
       "input": {
+        "Add Input": "Add Input",
+        "Input Number": "Input: {{length}}",
+        "description": {
+          "Http Request Header": "",
+          "Http Request Url": "",
+          "TFSwitch textarea": "",
+          "anyInput": "",
+          "dynamic input": "",
+          "textEditor textarea": "The passed variable can be referenced by {{key}}."
+        },
         "label": {
-          "chat history": "",
-          "switch": "",
-          "user question": ""
+          "Http Request Header": "",
+          "Http Request Method": "",
+          "Http Request Url": "",
+          "TFSwitch textarea": "",
+          "anyInput": "",
+          "chat history": "chat history",
+          "switch": "Switch",
+          "textEditor textarea": "Text Edit",
+          "user question": "User question"
         }
       },
       "inputType": {
+        "chat history": "History",
+        "dynamicTargetInput": "dynamic Target Input",
         "input": "Input",
         "selectApp": "App Selector",
         "selectChatModel": "Select Chat Model",
@@ -519,18 +621,34 @@
         "textarea": "Textarea"
       },
       "output": {
+        "Add Output": "Add Output",
+        "Output Number": "Output: {{length}}",
         "description": {
-          "running done": "running done"
+          "running done": "Triggered when the module call ends"
         },
         "label": {
-          "running done": "running done"
+          "result false": "",
+          "result true": "",
+          "running done": "End of module call ",
+          "text": "Text output"
         }
+      },
+      "template": {
+        "TFSwitch": "",
+        "TFSwitch intro": "",
+        "UnKnow Module": "UnKnow Module",
+        "textEditor": "Text Editor",
+        "textEditor intro": "Output of fixed or incoming text after edit"
+      },
+      "textEditor": {
+        "Text Edit": "Text Edit"
       },
       "valueType": {
         "any": "Any",
         "boolean": "Boolean",
         "chatHistory": "History",
         "datasetQuote": "Dataset Quote",
+        "dynamicTargetInput": "Dynamic Input",
         "number": "Number",
         "selectApp": "Select App",
         "selectDataset": "Select Dataset",
@@ -695,6 +813,10 @@
     "Visual AI orchestration": "Visual AI orchestration",
     "Why FastGPT": "Why {{title}}",
     "desc": "AI knowledge base question and answer platform based on LLM large model",
+    "navbar": {
+      "Use guidance": "Use Guidance",
+      "chatbot": "Chatbot"
+    },
     "slogan": "Let the AI know more about you"
   },
   "module": {
