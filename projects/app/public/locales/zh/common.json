@@ -125,10 +125,19 @@
       "context": "上下文",
       "running time": "模型运行时间"
     },
+    "tool":{
+      "HTML Export":"HTML导出",
+      "Markdown Export":"Markdown导出",
+      "PDF Export":"PDF导出"
+    },
     "copy": "复制",
     "delete": "删除",
     "retry": "重试",
-    "loading": "加载中"
+    "loading": "加载中",
+    "pintotop":"置顶",
+    "unpin":"取消置顶",
+    "customTitle":"自定义历史标题",
+    "customTitleNullTip":"如果设置为空，将使用聊天历史记录"
   },
   "common": {
     "Add": "添加",
